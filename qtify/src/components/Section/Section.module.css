@@ -1,0 +1,17 @@
+.sectionContainer{
+    margin-top:24px;
+
+}
+.sectionHeader{
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--color-black);
+    color:var(--color-white);
+    padding:0px 33px;
+}
+.gridContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+    padding:0px 32px;
+}

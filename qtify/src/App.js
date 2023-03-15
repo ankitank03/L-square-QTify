@@ -8,19 +8,15 @@ import Section from "./components/Section/Section";
 
 
 function App() {
-  useEffect(() => {
-    const datasource=fetchTopSongs()
-  }, [])
+
   
   return (
     <>
 
     <Navbar/>
     <Hero/>
-    <Card image={Album}
-          follows={"100 Follows"}
-          title="New Love"
-          />
+    
+      <Section title="Top Albums" dataSource={fetchTopSongs}/>
     </>
   );
 }

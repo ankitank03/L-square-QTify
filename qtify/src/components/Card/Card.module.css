@@ -1,20 +1,23 @@
 .card{
     margin-top:72px;
     margin-left:43px;
-    height:220px;
+    height:240px;
     width:159px;
     display:flex;
     flex-direction: column;
 }
 .cardBody{
-    box-shadow:0px 5px 15px -5px;
-    border-radius: 10px;
+   box-shadow:1.3px 2.6px 2.6px hsl(0deg 0% 0% / 0.46);
+    border-radius: 10px !important;
     cursor:pointer;
+    overflow: hidden;
+
 }
 .followsContainer{
     background-color: var(--color-black);
     width:fit-content;
     padding: 4px 8px;
-    border-radius: 10px;
     color:var(--color-white);
+    
+    
 }
