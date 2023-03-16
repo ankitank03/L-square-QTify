@@ -3,9 +3,9 @@ import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 import styles from "./Section.module.css";
 
-function Section({ title, dataSource }) {
+function Section({ title, dataSource,type }) {
     const [cards,setCards]=useState([]);
-    const[isShowAll,setShowAll]=useState(false);
+    const[isShowAllClicked,setShowAll]=useState(false);
     //console.log(dataSource)
     useEffect(() => {
         dataSource().then((data)=>setCards(data))
@@ -15,16 +15,19 @@ function Section({ title, dataSource }) {
     }
   return (
     <div className={styles.sectionContainer}>
-      <div className={styles.sectionHeader}>
+    
+    {type === "album"?
+    <>
+         <div className={styles.sectionHeader}>
         <h5>{title}</h5>
         
-       {isShowAll?<h5 onClick={handleShowAll} style={{ color: "var(--color-green)",cursor:"pointer"}}>Show All</h5>:
+       {!isShowAllClicked?<h5 onClick={handleShowAll} style={{ color: "var(--color-green)",cursor:"pointer"}}>Show All</h5>:
        <h5 onClick={handleShowAll} style={{ color: "var(--color-white)",cursor:"pointer"}}>Collapse</h5>} 
     </div>
 
         <div className={styles.gridContainer}>
             
-            {!isShowAll?cards.map((card)=>
+            {isShowAllClicked?cards.map((card)=>
                  <Card image={card.image}
                  follows={card.follows+" Follows"}
                  title={card.title}
@@ -36,8 +39,22 @@ function Section({ title, dataSource }) {
             renderComponent={(data)=><Card image={data.image} follows={data.follows+" Follows"} title={data.title}/>}
             />}           
             </div>
-           
+    </>:
+    <>
+    <div className={styles.sectionSongsHeader}>
+     <h5>{title}</h5> 
+ </div>
+     <div className={styles.gridContainer}>
+            
+   <Carousel 
+     data={cards} 
+     renderComponent={(data)=><Card image={data.image} follows={data.follows+" Likes"} title={data.title}/>}/>
+        
     </div>
+    </>
+    
+    }
+</div>
   );
 }
 

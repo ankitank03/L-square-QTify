@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { fetchTopSongs } from "./components/api/api";
+import { fetchNewSongs, fetchSongs, fetchTopSongs } from "./components/api/api";
 import Card from "./components/Card/Card";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
@@ -16,7 +16,9 @@ function App() {
     <Navbar/>
     <Hero/>
     
-      <Section title="Top Albums" dataSource={fetchTopSongs}/>
+      <Section title="Top Albums" dataSource={fetchTopSongs} type="album"/>
+      <Section title="New Albums" dataSource={fetchNewSongs} type="album"/>
+      <Section title="Songs" dataSource={fetchSongs} type="songs"/>
     </>
   );
 }

@@ -17,3 +17,12 @@
     column-gap: 24px;
     padding:0px 32px;
 }
+.sectionSongsHeader{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--color-black);
+    color:var(--color-white);
+    padding:0px 33px;
+}
+
