@@ -22,7 +22,11 @@
     -webkit-font-smoothing: antialiased;
     font-family: 'Poppins', sans-serif;
     background-color: var(--color-black);
+    color:var(--color-white);
 
+  }
+  .swiper-slide{
+    width:auto !important;
   }
   img,
   picture,

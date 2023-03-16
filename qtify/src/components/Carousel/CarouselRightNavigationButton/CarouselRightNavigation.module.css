@@ -1,0 +1,7 @@
+.wrapper{
+    position:absolute;
+    top:30%;
+    right:0%;;
+    z-index:10;
+    transform:"translateY(-50%)"
+}
